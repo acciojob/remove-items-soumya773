@@ -1,9 +1,11 @@
-//your JS code here. If required.
 function removeSelectedColor() {
-      const selectElement = document.getElementById("colorSelect");
-      const selectedIndex = selectElement.selectedIndex;
+    const select = document.getElementById("colorSelect");
+    const selectedValue = select.value;
 
-      if (selectedIndex !== -1) {
-        selectElement.remove(selectedIndex);
+    for (let i = 0; i < select.options.length; i++) {
+      if (select.options[i].value === selectedValue) {
+        select.remove(i);
+        break;
       }
     }
+  }
